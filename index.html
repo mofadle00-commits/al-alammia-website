@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>العالمية لتوريد السيارات للشركات</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background: #f7fbfe;
+            color: #111;
+            transition: .3s;
+        }
+
+        /* ===== LANGUAGE BUTTON ===== */
+
+        .language {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            z-index: 10;
+        }
+
+        .language button {
+            border: none;
+            background: #111;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .language button:hover {
+            background: #3e9ed6;
+        }
+
+        /* ===== HEADER ===== */
+
+        .header {
+            position: relative;
+            background: #fff;
+            border-bottom: 5px solid #66b7e8;
+            padding: 18px 20px 12px;
+            text-align: center;
+        }
+
+        .logo {
+            width: min(900px, 100%);
+            max-height: 170px;
+            object-fit: contain;
+            display: block;
+            margin: auto;
+        }
+
+        /* ===== HERO ===== */
+
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 55px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,.94),
+                    rgba(238,248,253,.96)
+                ),
+                radial-gradient(
+                    circle at center,
+                    #ccecff,
+                    #fff 65%
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            margin: 0 0 18px;
+            font-size: clamp(30px, 5vw, 55px);
+            color: #111;
+        }
+
+        .hero h1 span {
+            color: #3e9ed6;
+        }
+
+        .hero p {
+            font-size: clamp(18px, 2.5vw, 24px);
+            line-height: 2;
+            margin: 0 auto 28px;
+        }
+
+        .line {
+            width: 100px;
+            height: 5px;
+            background: #66b7e8;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        /* ===== SECTIONS ===== */
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 40px auto;
+        }
+
+        .box {
+            background: #fff;
+            padding: 38px;
+            margin-bottom: 28px;
+            border: 1px solid #e2edf4;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.07);
+        }
+
+        .box h2 {
+            color: #111;
+            text-align: center;
+            font-size: 30px;
+            margin: 0 0 22px;
+        }
+
+        .box h2 span {
+            color: #3e9ed6;
+        }
+
+        .about {
+            text-align: center;
+            font-size: 18px;
+            line-height: 2.1;
+        }
+
+        /* ===== SERVICES ===== */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .service {
+            background: #f3faff;
+            border: 1px solid #d9edf8;
+            border-radius: 14px;
+            padding: 25px 18px;
+            text-align: center;
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 14px;
+            border-radius: 50%;
+            background: #66b7e8;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .service h3 {
+            margin: 8px 0;
+            color: #111;
+        }
+
+        .service p {
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        /* ===== CONTACT ===== */
+
+        .contact {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .contact-item {
+            background: #f3faff;
+            border-right: 5px solid #66b7e8;
+            padding: 22px;
+            border-radius: 12px;
+        }
+
+        .contact-item h3 {
+            margin: 0 0 10px;
+            color: #111;
+        }
+
+        .contact-item a {
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            direction: ltr;
+            unicode-bidi: embed;
+        }
+
+        .contact-item a:hover {
+            color: #2d8fc9;
+        }
+
+        .address {
+            font-size: 18px;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        /* ===== BUTTONS ===== */
+
+        .buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 27px;
+            margin: 6px;
+            border-radius: 9px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            opacity: .9;
+        }
+
+        .call,
+        .email {
+            background: #111;
+        }
+
+        .whatsapp {
+            background: #66b7e8;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 24px 15px;
+            border-top: 5px solid #66b7e8;
+        }
+
+        /* ===== ENGLISH MODE ===== */
+
+        body.english {
+            direction: ltr;
+        }
+
+        body.english .contact-item {
+            border-right: none;
+            border-left: 5px solid #66b7e8;
+        }
+
+        /* ===== MOBILE ===== */
+
+        @media (max-width: 700px) {
+
+            .header {
+                padding: 55px 8px 8px;
+            }
+
+            .logo {
+                max-height: 125px;
+            }
+
+            .language {
+                top: 12px;
+                left: 12px;
+            }
+
+            .hero {
+                min-height: 360px;
+                padding: 40px 18px;
+            }
+
+            .box {
+                padding: 25px 18px;
+            }
+
+            .services,
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+
+    <header class="header">
+
+        <div class="language">
+            <button id="languageBtn" onclick="changeLanguage()">
+                English
+            </button>
+        </div>
+
+        <!-- logo.png يجب أن يكون بجانب index.html -->
+        <img
+            src="logo.png"
+            alt="العالمية لتوريد السيارات للشركات"
+            class="logo"
+        >
+
+    </header>
+
+
+    <!-- ===== HERO ===== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                <span id="heroTitle1">العالمية</span>
+                <br>
+                <span id="heroTitle2">لتوريد السيارات للشركات</span>
+            </h1>
+
+            <div class="line"></div>
+
+            <p id="heroText">
+                حلول متكاملة لتوريد السيارات وخدمات الشركات
+                بأعلى معايير الجودة والاحترافية.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <main class="container">
+
+
+        <!-- ===== ABOUT ===== -->
+
+        <section class="box">
+
+            <h2>
+                <span id="aboutTitle">عن</span>
+                <span id="companyTitle"> الشركة</span>
+            </h2>
+
+            <div class="about">
+
+                <p id="aboutText1">
+                    العالمية لتوريد السيارات للشركات متخصصة في توفير
+                    السيارات وحلول النقل للشركات والمؤسسات.
+                </p>
+
+                <p id="aboutText2">
+                    نحرص على تقديم خدمة احترافية وحلول مناسبة لاحتياجات
+                    كل شركة، مع الالتزام بالجودة وسرعة الاستجابة.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== SERVICES ===== -->
+
+        <section class="box">
+
+            <h2>
+                <span id="servicesTitle">خدماتنا</span>
+            </h2>
+
+            <div class="services">
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        🚗
+                    </div>
+
+                    <h3 id="service1Title">
+                        توفير السيارات
+                    </h3>
+
+                    <p id="service1Text">
+                        توفير سيارات متنوعة تناسب احتياجات الشركات.
+                    </p>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        🤝
+                    </div>
+
+                    <h3 id="service2Title">
+                        شراكة طويلة المدى
+                    </h3>
+
+                    <p id="service2Text">
+                        حلول مرنة وخدمة مستمرة للشركات والمؤسسات.
+                    </p>
+
+                </div>
+
+
+                <div class="service">
+
+                    <div class="service-icon">
+                        ✓
+                    </div>
+
+                    <h3 id="service3Title">
+                        جودة موثوقة
+                    </h3>
+
+                    <p id="service3Text">
+                        نهتم بالجودة والاحترافية في جميع خدماتنا.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== CONTACT ===== -->
+
+        <section class="box">
+
+            <h2>
+                <span id="contactTitle">تواصل معنا</span>
+            </h2>
+
+
+            <div class="contact">
+
+
+                <div class="contact-item">
+
+                    <h3 id="phoneTitle">
+                        📞 الهاتف
+                    </h3>
+
+                    <a href="tel:01225822922">
+                        01225822922
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <h3 id="whatsappTitle">
+                        💬 واتساب
+                    </h3>
+
+                    <a
+                        href="https://wa.me/201271087827"
+                        target="_blank"
+                    >
+                        01271087827
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <h3 id="emailTitle">
+                        ✉️ البريد الإلكتروني
+                    </h3>
+
+                    <a
+                        href="mailto:alalamyacarrental@gmail.com"
+                    >
+                        alalamyacarrental@gmail.com
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <h3 id="addressTitle">
+                        📍 العنوان
+                    </h3>
+
+                    <p
+                        class="address"
+                        id="addressText"
+                    >
+                        شارع شركات البترول - الشرابية
+                        <br>
+                        درويش بك متفرع من طور سيناء - الظاهر
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="buttons">
+
+                <a
+                    class="button call"
+                    href="tel:01225822922"
+                    id="callButton"
+                >
+                    📞 اتصل بنا
+                </a>
+
+
+                <a
+                    class="button whatsapp"
+                    href="https://wa.me/201271087827"
+                    target="_blank"
+                    id="whatsappButton"
+                >
+                    💬 واتساب
+                </a>
+
+
+                <a
+                    class="button email"
+                    href="mailto:alalamyacarrental@gmail.com"
+                    id="emailButton"
+                >
+                    ✉️ أرسل إيميل
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ===== FOOTER ===== -->
+
+    <footer>
+
+        <span id="footerText">
+            © 2026 العالمية لتوريد السيارات للشركات
+            <br>
+            جميع الحقوق محفوظة
+        </span>
+
+    </footer>
+
+
+    <!-- ===== LANGUAGE SCRIPT ===== -->
+
+    <script>
+
+        let english = false;
+
+        function changeLanguage() {
+
+            english = !english;
+
+            const btn = document.getElementById("languageBtn");
+
+            if (english) {
+
+                document.documentElement.lang = "en";
+                document.documentElement.dir = "ltr";
+
+                document.body.classList.add("english");
+
+                btn.innerText = "العربية";
+
+
+                document.title =
+                    "Al Alammia - Corporate Vehicle Supply";
+
+
+                document.getElementById("heroTitle1").innerText =
+                    "AL ALAMMIA";
+
+                document.getElementById("heroTitle2").innerText =
+                    "Corporate Vehicle Supply";
+
+                document.getElementById("heroText").innerText =
+                    "Complete vehicle supply solutions and corporate transportation services with the highest standards of quality and professionalism.";
+
+
+                document.getElementById("aboutTitle").innerText =
+                    "About";
+
+                document.getElementById("companyTitle").innerText =
+                    " the Company";
+
+                document.getElementById("aboutText1").innerText =
+                    "Al Alammia Corporate Vehicle Supply specializes in providing vehicles and transportation solutions for companies and organizations.";
+
+                document.getElementById("aboutText2").innerText =
+                    "We provide professional services and suitable solutions tailored to the needs of every company, with a strong commitment to quality and fast response.";
+
+
+                document.getElementById("servicesTitle").innerText =
+                    "Our Services";
+
+
+                document.getElementById("service1Title").innerText =
+                    "Vehicle Supply";
+
+                document.getElementById("service1Text").innerText =
+                    "A wide range of vehicles suitable for corporate needs.";
+
+
+                document.getElementById("service2Title").innerText =
+                    "Long-Term Partnership";
+
+                document.getElementById("service2Text").innerText =
+                    "Flexible solutions and continuous service for companies and organizations.";
+
+
+                document.getElementById("service3Title").innerText =
+                    "Reliable Quality";
+
+                document.getElementById("service3Text").innerText =
+                    "We focus on quality and professionalism in all our services.";
+
+
+                document.getElementById("contactTitle").innerText =
+                    "Contact Us";
+
+
+                document.getElementById("phoneTitle").innerText =
+                    "📞 Phone";
+
+
+                document.getElementById("whatsappTitle").innerText =
+                    "💬 WhatsApp";
+
+
+                document.getElementById("emailTitle").innerText =
+                    "✉️ Email";
+
+
+                document.getElementById("addressTitle").innerText =
+                    "📍 Address";
+
+
+                document.getElementById("addressText").innerHTML =
+                    "Petroleum Companies Street - Al Sharabia<br>" +
+                    "Darwish Bek, off Tour Sinai - Al Daher";
+
+
+                document.getElementById("callButton").innerText =
+                    "📞 Call Us";
+
+
+                document.getElementById("whatsappButton").innerText =
+                    "💬 WhatsApp";
+
+
+                document.getElementById("emailButton").innerText =
+                    "✉️ Send Email";
+
+
+                document.getElementById("footerText").innerHTML =
+                    "© 2026 Al Alammia Corporate Vehicle Supply" +
+                    "<br>" +
+                    "All Rights Reserved";
+
+            }
+
+            else {
+
+                document.documentElement.lang = "ar";
+                document.documentElement.dir = "rtl";
+
+                document.body.classList.remove("english");
+
+                btn.innerText = "English";
+
+
+                document.title =
+                    "العالمية لتوريد السيارات للشركات";
+
+
+                document.getElementById("heroTitle1").innerText =
+                    "العالمية";
+
+                document.getElementById("heroTitle2").innerText =
+                    "لتوريد السيارات للشركات";
+
+                document.getElementById("heroText").innerText =
+                    "حلول متكاملة لتوريد السيارات وخدمات الشركات بأعلى معايير الجودة والاحترافية.";
+
+
+                document.getElementById("aboutTitle").innerText =
+                    "عن";
+
+                document.getElementById("companyTitle").innerText =
+                    " الشركة";
+
+
+                document.getElementById("aboutText1").innerText =
+                    "العالمية لتوريد السيارات للشركات متخصصة في توفير السيارات وحلول النقل للشركات والمؤسسات.";
+
+                document.getElementById("aboutText2").innerText =
+                    "نحرص على تقديم خدمة احترافية وحلول مناسبة لاحتياجات كل شركة، مع الالتزام بالجودة وسرعة الاستجابة.";
+
+
+                document.getElementById("servicesTitle").innerText =
+                    "خدماتنا";
+
+
+                document.getElementById("service1Title").innerText =
+                    "توفير السيارات";
+
+                document.getElementById("service1Text").innerText =
+                    "توفير سيارات متنوعة تناسب احتياجات الشركات.";
+
+
+                document.getElementById("service2Title").innerText =
+                    "شراكة طويلة المدى";
+
+                document.getElementById("service2Text").innerText =
+                    "حلول مرنة وخدمة مستمرة للشركات والمؤسسات.";
+
+
+                document.getElementById("service3Title").innerText =
+                    "جودة موثوقة";
+
+                document.getElementById("service3Text").innerText =
+                    "نهتم بالجودة والاحترافية في جميع خدماتنا.";
+
+
+                document.getElementById("contactTitle").innerText =
+                    "تواصل معنا";
+
+
+                document.getElementById("phoneTitle").innerText =
+                    "📞 الهاتف";
+
+
+                document.getElementById("whatsappTitle").innerText =
+                    "💬 واتساب";
+
+
+                document.getElementById("emailTitle").innerText =
+                    "✉️ البريد الإلكتروني";
+
+
+                document.getElementById("addressTitle").innerText =
+                    "📍 العنوان";
+
+
+                document.getElementById("addressText").innerHTML =
+                    "شارع شركات البترول - الشرابية<br>" +
+                    "درويش بك متفرع من طور سيناء - الظاهر";
+
+
+                document.getElementById("callButton").innerText =
+                    "📞 اتصل بنا";
+
+
+                document.getElementById("whatsappButton").innerText =
+                    "💬 واتساب";
+
+
+                document.getElementById("emailButton").innerText =
+                    "✉️ أرسل إيميل";
+
+
+                document.getElementById("footerText").innerHTML =
+                    "© 2026 العالمية لتوريد السيارات للشركات" +
+                    "<br>" +
+                    "جميع الحقوق محفوظة";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
